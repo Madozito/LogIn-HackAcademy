@@ -27,12 +27,17 @@ document.querySelector("input").addEventListener("input",function () {
 
 
 document.querySelector("#btn-log").addEventListener("click",function (){
-    checkPassword();
+    checkPasswordLength();
+    checkPasswordCapital();
+    checkPasswordLowercase();
+    checkPasswordNumber();
     
 })
 
-function checkPassword (){
+function checkPasswordLength (){
+
     var password = document.getElementById("pass1").value;
+
     if (password.length < 8 ) {
         document.getElementById("pass1").classList.add("is-invalid")
         document.getElementById("pass1").classList.remove("is-valid")
@@ -43,9 +48,46 @@ function checkPassword (){
         document.getElementById("pass1").classList.remove("is-invalid")
         document.getElementById("pass1").classList.add("is-valid")
     }
+}
 
+function checkPasswordLowercase() {
+    var password = document.getElementById("pass1").value;
+    if ( password.match(/[a-z]/) ) {
+        document.getElementById("pass1").classList.remove("is-invalid")
+        document.getElementById("pass1").classList.add("is-valid")
+    }else{
+        document.getElementById("pass1").classList.remove("is-valid")
+        document.getElementById("pass1").classList.add("is-invalid")
+        document.getElementById("message").style.display = "block";
+    }
 
 }
 
-// function to validate password length in js?
+function checkPasswordCapital() {
+    var password = document.getElementById("pass1").value;
+    if (password.match(/[A-Z]/) ) {
+        document.getElementById("pass1").classList.remove("is-invalid")
+        document.getElementById("pass1").classList.add("is-valid")
+    }else {
+        document.getElementById("pass1").classList.remove("is-invalid")
+        document.getElementById("pass1").classList.add("is-invalid");
+        document.getElementById("message").style.display = "block";
+    }
+
+}
+
+function checkPasswordNumber() {
+    if (password.match(/\d/) ) {
+        document.getElementById("pass1").classList.remove("is-invalid")
+        document.getElementById("pass1").classList.add("is-valid")
+    }else {
+        document.getElementById("pass1").classList.remove("is-valid")
+        document.getElementById("pass1").classList.add("is-invalid")
+        document.getElementById("message").style.display = "block";
+    }
+
+    
+}
+
+
     
