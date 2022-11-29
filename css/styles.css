@@ -1,0 +1,35 @@
+
+#formulario{
+    border-radius: 4px;
+    background-color: #cfdbdbd8;
+
+}
+
+.video-container video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;  /* Para que el video este atras del Log In*/
+  
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+}    
+
+#password-miss{
+    color: white;
+}
+
+
+  
+    
+
+
