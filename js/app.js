@@ -27,12 +27,57 @@ document.querySelector("input").addEventListener("input",function () {
 
 
 document.querySelector("#btn-log").addEventListener("click",function (){
+
     checkPasswordLength();
     checkPasswordCapital();
     checkPasswordLowercase();
     checkPasswordNumber();
+ 
     
 })
+
+function checkPassword() {
+    var password = document.getElementById("pass1").value;
+
+    if (password.length < 8 ) {
+        document.getElementById("pass1").classList.add("is-invalid")
+        document.getElementById("pass1").classList.remove("is-valid")
+        document.getElementById("message").style.display = "block";
+        
+  
+    }else{
+        document.getElementById("pass1").classList.remove("is-invalid")
+        document.getElementById("pass1").classList.add("is-valid")
+    }
+
+    if ( password.match(/[a-z]/) ) {
+        document.getElementById("pass1").classList.remove("is-invalid")
+        document.getElementById("pass1").classList.add("is-valid")
+    }else{
+        document.getElementById("pass1").classList.remove("is-valid")
+        document.getElementById("pass1").classList.add("is-invalid")
+        document.getElementById("message").style.display = "block";
+    }
+
+    if (password.match(/[A-Z]/) ) {
+        document.getElementById("pass1").classList.remove("is-invalid")
+        document.getElementById("pass1").classList.add("is-valid")
+    }else {
+        document.getElementById("pass1").classList.remove("is-valid")
+        document.getElementById("pass1").classList.add("is-invalid");
+        document.getElementById("message").style.display = "block";
+    }
+
+    if (password.match(/\d/) ) {
+        document.getElementById("pass1").classList.remove("is-invalid")
+        document.getElementById("pass1").classList.add("is-valid")
+    }else {
+        document.getElementById("pass1").classList.remove("is-valid")
+        document.getElementById("pass1").classList.add("is-invalid")
+        document.getElementById("message").style.display = "block";
+    }
+    
+}
 
 function checkPasswordLength (){
 
