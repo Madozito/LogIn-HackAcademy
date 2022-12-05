@@ -28,9 +28,7 @@ document.querySelector("input").addEventListener("input",function () {
 document.querySelector("#btn-log").addEventListener("click",function (){
 
     checkPasswordLength();
-    checkPasswordCapital();
-    checkPasswordLowercase();
-    checkPasswordNumber();
+
 
     
 })
